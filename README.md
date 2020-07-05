@@ -8,6 +8,7 @@ Uses [Next](https://nextjs.org/) please refer to its [Docs](https://nextjs.org/d
 
 1. Run `yarn install`
 2. Run `yarn dev` to start the development server and you are good to go!
+3. Open `http://localhost:7777/` in your browser!
 
 ## Builds
 
