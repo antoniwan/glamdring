@@ -11,4 +11,4 @@ function useUser() {
   }
 }
 
-export { CURRENT_USER_QUERY, useUser };
+export { useUser, CURRENT_USER_QUERY };

@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 function Home() {
   return (
     <div>
-      <h1>Glamdring!</h1>
+      <h1>Welcome!</h1>
     </div>
   );
 }
