@@ -1,0 +1,9 @@
+{
+  "name": "glamdring",
+  "version": "1.0.0",
+  "description": "Top secret.",
+  "main": "index.js",
+  "author": "CarBuckets",
+  "license": "UNLICENSED",
+  "private": true
+}
