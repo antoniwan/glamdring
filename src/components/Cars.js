@@ -1,12 +1,26 @@
 import PropTypes from "prop-types";
 import React from "react";
+import { useQuery } from "@apollo/client";
+import gql from "graphql-tag";
 import styled from "styled-components";
 import Car from "./Car";
 import Pagination from "./Pagination";
 import { perPage } from "../config";
 
 // TODO:  orderBy: "createdAt_DESC"
-const ALL_ITEMS_QUERY = ``;
+const ALL_ITEMS_QUERY = gql`
+  query ALL_ITEMS_QUERY($skip: Int = 0, $first: Int = ${perPage}) {
+    allItems(first: $first, skip: $skip, orderBy: "createdAt_DESC") {
+      id
+      name
+      price
+      description
+      image {
+        publicUrlTransformed
+      }
+    }
+  }
+`;
 
 const Center = styled.div`
   text-align: center;
@@ -32,7 +46,7 @@ function Items({ page, count }) {
         return (
           <ItemsList>
             {data.allItems.map((item) => (
-              <Item item={item} key={item.id} />
+              <Car car={item} key={item.id} />
             ))}
           </ItemsList>
         );

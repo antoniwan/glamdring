@@ -1,5 +1,7 @@
 import App from "next/app";
+import { ApolloProvider } from "@apollo/client";
 import Page from "../components/Page";
+import withData from "../libs/withData";
 import { CheckoutStateProvider } from "../components/LocalState";
 
 class Glamdring extends App {
@@ -14,16 +16,18 @@ class Glamdring extends App {
   }
 
   render() {
-    const { Component, pageProps } = this.props;
+    const { Component, apollo, pageProps } = this.props;
 
     return (
-      <CheckoutStateProvider>
-        <Page>
-          <Component {...pageProps} />
-        </Page>
-      </CheckoutStateProvider>
+      <ApolloProvider client={apollo}>
+        <CheckoutStateProvider>
+          <Page>
+            <Component {...pageProps} />
+          </Page>
+        </CheckoutStateProvider>
+      </ApolloProvider>
     );
   }
 }
 
-export default Glamdring;
+export default withData(Glamdring);

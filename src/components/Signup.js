@@ -1,8 +1,7 @@
 import React from "react";
 import { useMutation } from "@apollo/client";
 import gql from "graphql-tag";
-
-import Form from "./styles/Form";
+import Form from "../styles/Form";
 import Error from "./ErrorMessage";
 import { CURRENT_USER_QUERY } from "./User";
 import useForm from "../libs/useForm";
