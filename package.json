@@ -5,5 +5,20 @@
   "main": "index.js",
   "author": "CarBuckets",
   "license": "UNLICENSED",
-  "private": true
+  "private": true,
+  "scripts": {
+    "dev": "next -p 7777",
+    "build": "next build",
+    "start": "next start -p 7777",
+    "test": "NODE_ENV=test jest --watch",
+    "heroku-postbuild": "next build"
+  },
+  "dependencies": {
+    "babel-core": "^6.26.3",
+    "babel-plugin-styled-components": "^1.10.7",
+    "prop-types": "^15.7.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "styled-components": "^5.1.1"
+  }
 }
