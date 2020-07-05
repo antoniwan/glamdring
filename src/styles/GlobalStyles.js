@@ -18,6 +18,8 @@ const GlobalStyles = createGlobalStyle`
     --color-black: #393939;
     --color-grey: #3A3A3A;
     --color-lightgrey: #E1E1E1;
+
+    --color-primary: var(--color-purple);
     --maxWidth: 1000px;
     --boxShadow: 0 12px 24px 0 rgba(0, 0, 0, 0.09);
   }
