@@ -1,13 +1,9 @@
-import PropTypes from "prop-types";
+import Account from "../components/Account";
 
-function Me() {
-  return (
-    <div>
-      <h1>Me!</h1>
-    </div>
-  );
-}
-
-Me.propTypes = {};
+const Me = (props) => (
+  <div>
+    <Account />
+  </div>
+);
 
 export default Me;

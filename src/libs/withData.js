@@ -11,11 +11,12 @@ function createClient({ headers, initialState }) {
     link: ApolloLink.from([
       onError(({ graphQLErrors, networkError }) => {
         if (graphQLErrors)
-          graphQLErrors.forEach(({ message, locations, path }) =>
+          graphQLErrors.forEach(({ message, locations, path }) => {
             console.log(
               `[GraphQL error]: Message: ${message}, Location: ${locations}, Path: ${path}`
-            )
-          );
+            );
+            console.log(locations);
+          });
         if (networkError)
           console.log(
             `[Network error]: ${networkError}. Backend is unreachable. Is it running?`
@@ -25,7 +26,7 @@ function createClient({ headers, initialState }) {
       createUploadLink({
         uri:
           process.env.NODE_ENV === "development"
-            ? endpoint.localhost
+            ? endpoint.development
             : endpoint.production,
         fetchOptions: {
           credentials: "include",
@@ -38,7 +39,7 @@ function createClient({ headers, initialState }) {
       typePolicies: {
         Query: {
           fields: {
-            allItems: paginationField(),
+            allCars: paginationField(),
           },
         },
       },

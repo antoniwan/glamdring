@@ -2,7 +2,7 @@
 // DO NOT PUT ANYTHING SENSITIVE HERE!!
 // DO NOT PUT ANYTHING IN HERE THAT SHOULD NOT BE PUBLIC!
 export const endpoint = {
-  local: `http://localhost:3000/admin/api`,
+  development: `http://localhost:3000/admin/api`,
   production: ``,
 };
 export const perPage = 25;
