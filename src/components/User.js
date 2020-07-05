@@ -1,14 +1,37 @@
-// import PropTypes from "prop-types";
-// import { useState, useEffect } from "react";
+import gql from "graphql-tag";
+import PropTypes from "prop-types";
+import { useQuery } from "@apollo/client";
+import { useState, useEffect } from "react";
 
-const CURRENT_USER_QUERY = {};
+const CURRENT_USER_QUERY = gql`
+  query {
+    authenticatedUser {
+      id
+      email
+      name
+      permissions
+      cart {
+        id
+        quantity
+        item {
+          id
+          price
+          image {
+            publicUrlTransformed
+          }
+          name
+          description
+        }
+      }
+    }
+  }
+`;
 
 function useUser() {
-  const data = {};
-  const authenticatedUser = true;
+  const { data, loading, error } = useQuery(CURRENT_USER_QUERY);
   if (data) {
-    return authenticatedUser;
+    return data.authenticatedUser;
   }
 }
 
-export { useUser, CURRENT_USER_QUERY };
+export { CURRENT_USER_QUERY, useUser };
