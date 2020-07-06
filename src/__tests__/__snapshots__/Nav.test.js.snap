@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Nav/> Renders a full nav bar when users are signed in. 1`] = `
+<div>
+  <ul
+    class="NavStyles-sc-1gfalrs-0 cnYpHa"
+    data-testid="nav"
+  >
+    <a
+      href="/used-cars"
+    >
+      Used Cars
+    </a>
+    <a
+      href="/track-your-order"
+    >
+      Track Your Order
+    </a>
+    <a
+      href="/me"
+    >
+      Account
+    </a>
+    <button
+      type="button"
+    >
+      Sign Out
+    </button>
+    <button
+      type="button"
+    >
+      Checkout
+    </button>
+  </ul>
+</div>
+`;
+
+exports[`<Nav/> Renders a shorter nav bar when users are signed out. 1`] = `
+<div>
+  <ul
+    class="NavStyles-sc-1gfalrs-0 cnYpHa"
+    data-testid="nav"
+  >
+    <a
+      href="/used-cars"
+    >
+      Used Cars
+    </a>
+    <a
+      href="/signup"
+    >
+      Sign In
+    </a>
+  </ul>
+</div>
+`;
