@@ -42,43 +42,46 @@ function Signup() {
         {data && data.createUser && (
           <p>Signed up with {data.createUser.email} — Please Sign In now</p>
         )}
-        <h2>Sign Up for An Account</h2>
-        <Error error={error} />
-        <label htmlFor="email">
-          Email
-          <input
-            type="email"
-            name="email"
-            placeholder="email"
-            value={inputs.email}
-            onChange={handleChange}
-            autoComplete="email"
-          />
-        </label>
-        <label htmlFor="name">
-          Name
-          <input
-            type="text"
-            name="name"
-            placeholder="name"
-            value={inputs.name}
-            onChange={handleChange}
-            autoComplete="name"
-          />
-        </label>
-        <label htmlFor="password">
-          Password
-          <input
-            type="password"
-            name="password"
-            placeholder="password"
-            value={inputs.password}
-            onChange={handleChange}
-            autoComplete="new-password"
-          />
-        </label>
 
-        <button type="submit">Sign Up!</button>
+        <div className={data && data.createUser ? "hidden" : ""}>
+          <h2>Sign Up for An Account</h2>
+          <Error error={error} />
+          <label htmlFor="email">
+            Email
+            <input
+              type="email"
+              name="email"
+              placeholder="email"
+              value={inputs.email}
+              onChange={handleChange}
+              autoComplete="email"
+            />
+          </label>
+          <label htmlFor="name">
+            Name
+            <input
+              type="text"
+              name="name"
+              placeholder="name"
+              value={inputs.name}
+              onChange={handleChange}
+              autoComplete="name"
+            />
+          </label>
+          <label htmlFor="password">
+            Password
+            <input
+              type="password"
+              name="password"
+              placeholder="password"
+              value={inputs.password}
+              onChange={handleChange}
+              autoComplete="new-password"
+            />
+          </label>
+
+          <button type="submit">Sign Up!</button>
+        </div>
       </fieldset>
     </Form>
   );

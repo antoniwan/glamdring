@@ -5,8 +5,6 @@ import Title from "../styles/Title";
 import CarStyles from "../styles/CarStyles";
 import PriceTag from "../styles/PriceTag";
 import formatMoney from "../libs/formatMoney";
-import DeleteCar from "./DeleteCar";
-import AddToCheckout from "./AddToCheckout";
 
 export default function Car({ car }) {
   return (
@@ -23,21 +21,8 @@ export default function Car({ car }) {
           <a>{car.name}</a>
         </Link>
       </Title>
-      <PriceTag>{formatMoney(car.price)}</PriceTag>
+      <PriceTag>{formatMoney(car.msrp)}</PriceTag>
       <p>{car.description}</p>
-
-      <div className="buttonList">
-        <Link
-          href={{
-            pathname: "update",
-            query: { id: item.id },
-          }}
-        >
-          <a>Edit</a>
-        </Link>
-        <AddToCheckout id={car.id} />
-        <DeleteCar id={car.id}>Remove from Checkout</DeleteCar>
-      </div>
     </CarStyles>
   );
 }

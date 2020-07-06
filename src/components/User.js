@@ -8,19 +8,6 @@ const CURRENT_USER_QUERY = gql`
       email
       name
       permissions
-      checkout {
-        id
-        quantity
-        car {
-          id
-          price
-          image {
-            publicUrlTransformed
-          }
-          name
-          description
-        }
-      }
     }
   }
 `;
